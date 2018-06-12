@@ -14,13 +14,18 @@ addBtn.addEventListener('click',function(){
     li.append(itemTitle)
     li.append(removeBtn)
     toDo.append(li)
+    console.log (tasktitle.val()) 
+    let pickle = tasktitle.val()
+    console.log(pickle)
     document.getElementById("taskTitle").value = ""
     finish.change(function(){
         if($(this).is(":checked"))
             {done.append(li)}
         else
             {toDo.append(li)}})
-  
+    console.log (tasktitle.val())
+    console.log (itemTitle)
+    console.log (itemTitle.val())
   
   fetch('http://localhost:3000/tasks',{
     method : 'POST',
@@ -28,7 +33,7 @@ addBtn.addEventListener('click',function(){
       'Content-Type' : 'application/json'
     },
     body : JSON.stringify({
-      title : itemTitle.val(),
+      title : pickle,
       priority : 'high',
       dateCreated : 'June 11th',
       dateCompleted : 'open ',

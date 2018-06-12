@@ -9,7 +9,6 @@ app.use(bodyParser.json())
 
 // importing the movie class from movie.js file
 const Tasks = require('./tasks')
-const listItem = require('./listItem')
 
 // middleware
 app.use(function(req, res, next) {
